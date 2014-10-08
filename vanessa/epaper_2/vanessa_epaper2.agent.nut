@@ -178,11 +178,10 @@ http.onrequest(function(request, res) {
         
     } else if (path == "/clear") {
     	res.send(200, "OK\n");
-    	device.send("clear", 0);
+    	device.send("newImg", imgData.curImgInv);
     } else {
     	server.log("Agent got unknown request");
     	res.send(200, "OK\n");
     }
 });
-
 server.log("Agent Ready");
